@@ -30,14 +30,19 @@ n <- ggplot(data = stats, aes(x = Budgetmillion))
 n + geom_histogram(binwidth = 10, aes(fill = Genre), colour = "Black") + 
   ylim(0,50)
 
+# instead zoom in, see zoomed version of data falling b/w 0 and 50 on
+# y axis
 
+n + geom_histogram(binwidth = 10, aes(fill = Genre), colour = "Black") + 
+  coord_cartesian(ylim = c(0,50))
 
+w <- ggplot(data = stats, aes(x = CriticRating, y = AudienceRating,
+                              colour = Genre))
 
-
-
-
-
-
+w + geom_point(aes(size = Budgetmillion)) +
+  geom_smooth() +
+  facet_grid(Genre ~ year) +
+  coord_cartesian(ylim = c(0,100))
 
 
 
