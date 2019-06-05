@@ -8,6 +8,7 @@ rnorm(n=5,sd=8)
 seq(from=10, to=20,length.out = 100)
 
 x <- c("a","b","c")
+# Replicate
 rep(x,times=5)
 rep(x,each=5)
 
